@@ -5,12 +5,6 @@ spring:
 ---  
 server:
   port: 8001
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.lqz.microservicecloud.entity
-  mapper-locations:
-    - classpath:mybatis/mapper/**/*.xml
-
 spring:
   profiles: dev
   application:
@@ -26,7 +20,11 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
-      
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.lqz.microservicecloud.entity
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml    
 eureka:
   client:    # 将客户端注册进eureka服务列表内
     service-url:
@@ -34,22 +32,14 @@ eureka:
   instance:
     instance-id: dept-8001.com
     prefer-ip-address: true  # 访问路径可以显示ip地址
-
 info:
   app.name: lqz-microservicecloud
   company.name: www.lqz.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
-  
 ---
 server:
   port: 8001
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.lqz.microservicecloud.entity
-  mapper-locations:
-    - classpath:mybatis/mapper/**/*.xml
-
 spring:
   profiles: test
   application:
@@ -65,7 +55,11 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
-      
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.lqz.microservicecloud.entity
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml    
 eureka:
   client:    # 将客户端注册进eureka服务列表内
     service-url:
@@ -73,9 +67,9 @@ eureka:
   instance:
     instance-id: dept-8001.com
     prefer-ip-address: true  # 访问路径可以显示ip地址
-
 info:
   app.name: lqz-microservicecloud
   company.name: www.lqz.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+---
